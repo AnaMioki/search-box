@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seach box</title>
-    <link rel="stylesheet" href="/style.css">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+    <title>Search Box</title> <!-- Corrigido "Seach" para "Search" -->
+    <link rel="stylesheet" href="/style.css"> <!-- Link para o arquivo de estilos CSS -->
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Link para FontAwesome 5 -->
 </head>
 <body>
     <div class="box">
-        <input type="checkbox" id="check">
+        <!-- Checkbox oculto que controla a expansão da caixa de pesquisa -->
+        <input type="checkbox" id="check" style="display: none;"> <!-- Checkbox escondido para controle interno -->
+
         <div class="search-box">
+            <!-- Campo de entrada de texto para pesquisa -->
             <input type="text" placeholder="Type here...">
+            <!-- Label com ícone que também funciona como botão de controle -->
             <label for="check" class="icon">
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search"></i> <!-- Ícone de busca da FontAwesome -->
             </label>
         </div>
     </div>
-
-    
 </body>
 </html>

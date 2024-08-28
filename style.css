@@ -1,77 +1,84 @@
-/* tirar pré-definições do navegador */
-* {
+/* Remove as margens e preenchimentos padrões de todos os elementos,
+   além de definir o box-sizing para border-box para garantir que
+   o padding e a borda sejam incluídos na largura e altura do elemento */
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Define a fonte padrão para 'Poppins', com uma fonte genérica de sans-serif como fallback */
 }
 
-/* editando o corpo agora */
-
+/* Estiliza o corpo da página para preencher toda a altura e largura da tela,
+   define a cor de fundo e centraliza o conteúdo usando flexbox */
 body {
-    height: 100vh;
-    width: 100%;
-    background: #ff676d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* place: center */
+    height: 100vh; /* Altura da visualização completa */
+    width: 100%; /* Largura total da página */
+    background: #ff676d; /* Cor de fundo rosa avermelhado */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    /* place: center é comentado pois não é uma propriedade CSS válida */
 }
 
+/* Define o tamanho máximo e a largura total da caixa que contém a caixa de pesquisa */
 .box {
-    max-width: 400px;
-    width: 100%;
-
+    max-width: 400px; /* Largura máxima da caixa */
+    width: 100%; /* Largura total da caixa com base na largura do elemento pai */
 }
 
+/* Estiliza a caixa de pesquisa, que inclui a entrada e o ícone */
 .box .search-box {
-    position: relative;
-    height: 50px;
-    max-width: 50px;
-    margin: auto;
-    box-shadow: 0 5px 10px rgba( 0, 0, 0, 0.25);
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    position: relative; /* Permite posicionar elementos filhos absolutamente dentro desta caixa */
+    height: 50px; /* Altura da caixa de pesquisa */
+    max-width: 50px; /* Largura máxima inicial da caixa de pesquisa (antes de qualquer interação) */
+    margin: auto; /* Centraliza a caixa de pesquisa horizontalmente */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25); /* Adiciona uma sombra leve ao redor da caixa */
+    border-radius: 25px; /* Bordas arredondadas para a caixa de pesquisa */
+    transition: all 0.3s ease; /* Adiciona uma transição suave para todas as mudanças de estilo */
 }
 
-#check:checked ~ .search-box{
-    max-width: 380px;
+/* Quando o checkbox com id 'check' está marcado, aumenta a largura da caixa de pesquisa */
+#check:checked ~ .search-box {
+    max-width: 380px; /* Largura máxima expandida da caixa de pesquisa quando o checkbox está marcado */
 }
 
-.search-box input{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border-radius: 25px;
-    background: #fff;
-    outline: none;
-    border: none;
-    padding: 20px;
-    font-size: 16px;
+/* Estiliza o campo de entrada dentro da caixa de pesquisa */
+.search-box input {
+    position: absolute; /* Posiciona o campo de entrada dentro da caixa de pesquisa */
+    height: 100%; /* Faz com que o campo de entrada ocupe toda a altura da caixa de pesquisa */
+    width: 100%; /* Faz com que o campo de entrada ocupe toda a largura da caixa de pesquisa */
+    border-radius: 25px; /* Bordas arredondadas no campo de entrada */
+    background: #fff; /* Cor de fundo branca */
+    outline: none; /* Remove a borda padrão quando o campo está em foco */
+    border: none; /* Remove a borda padrão do campo de entrada */
+    padding: 20px; /* Adiciona um espaçamento interno ao campo de entrada */
+    font-size: 16px; /* Define o tamanho da fonte no campo de entrada */
 }
 
-.search-box .icon{
-    position: absolute;
-    right: -2px;
-    top: 0;
-    width: 50px;
-    background: #fff;
-    height: 100%;
-    text-align: center;
-    line-height: 50px;
-    color: #ff676d;
-    font-size: 18px;
-    border-radius: 25px;
+/* Estiliza o ícone dentro da caixa de pesquisa */
+.search-box .icon {
+    position: absolute; /* Posiciona o ícone dentro da caixa de pesquisa */
+    right: -2px; /* Posiciona o ícone um pouco fora do lado direito da caixa de pesquisa */
+    top: 0; /* Alinha o ícone ao topo da caixa de pesquisa */
+    width: 50px; /* Largura inicial do ícone */
+    background: #fff; /* Cor de fundo branca para o ícone */
+    height: 100%; /* Altura do ícone igual à altura da caixa de pesquisa */
+    text-align: center; /* Centraliza o texto (ícone) dentro da área do ícone */
+    line-height: 50px; /* Alinha verticalmente o ícone */
+    color: #ff676d; /* Cor do ícone */
+    font-size: 18px; /* Tamanho da fonte do ícone */
+    border-radius: 25px; /* Bordas arredondadas no ícone */
 }
 
-#check:checked ~ .search-box .icon{
-    background: #ff676d;
-    color: #fff;
-    width: 60px;
-    border-radius: 0 25px 25px 0;
+/* Quando o checkbox com id 'check' está marcado, modifica o estilo do ícone */
+#check:checked ~ .search-box .icon {
+    background: #ff676d; /* Cor de fundo do ícone quando o checkbox está marcado */
+    color: #fff; /* Cor do ícone quando o checkbox está marcado */
+    width: 60px; /* Largura do ícone quando o checkbox está marcado */
+    border-radius: 0 25px 25px 0; /* Arredondamento apenas no lado direito do ícone quando o checkbox está marcado */
 }
 
-#check{
-    display: none;
-    /* esconde o checkbox */
+/* Oculta o checkbox, que é utilizado apenas para controle interno do layout */
+#check {
+    display: none; /* Esconde o checkbox do layout */
 }
